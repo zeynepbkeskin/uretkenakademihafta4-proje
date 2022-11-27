@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+   
+   <style>
+ @keyframes efect {
+    from {
+        transform: scale(1);
+        opacity: 0.2;
+        border:2px solid white;
+        
+       
+    }
+
+    to {
+        transform: scale(1.3);
+        opacity: 1;
+        background-color:gray;
+        border:10px solid white;
+    }
+}      
+
+body {
+    background-color: ghostwhite;
+}
+
+.img {
+    width: 250px;
+    height: 300px;
+    margin: 6px;
+  
+    
+}
+
+.img:hover {
+    animation-name:efect;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;  
+    -ms-transform:  scale(1.3); /* IE 9 */
+   -webkit-transform: scale(1.3); /*  google-chrome Safari 3-8 */
+    transform: scale(1.3);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;    
+    
+}
+
+   </style>
+</head>
+<script>
+    function resimekle(img_sayi) {
+    for (var i = 1; i <= img_sayi; i++) {
+        resim = document.createElement("img");
+        resim.src = "https://source.unsplash.com/random/200*300" + i + ".jpg";
+        resim.className = "img";
+        document.body.appendChild(resim);
+    }
+}
+</script>
+
+<body style="text-align:center" onload="resimekle(15)">
+  <h2 style="text-align:center;font-family:Papyrus">Resim Galerisi</h2>
+  <hr>
+</body>
+
+</html>
